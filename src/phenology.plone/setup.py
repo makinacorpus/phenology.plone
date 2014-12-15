@@ -33,7 +33,7 @@ setup(
         "phenology"
     ],
     version=version,
-    description="Plone theme for CREA Mont Blanc Pheneologie",
+    description="""Plone theme for CREA Mont Blanc Pheneologie""",
     long_description=long_description,
     classifiers=classifiers,
     keywords="",
@@ -65,7 +65,7 @@ setup(
         # with_ploneproduct_enewsletter
         "Products.EasyNewsletter",
         # -*- Extra requirements: -*-
-        "collective.cover",
+        "collective.covers",
     ],
     extras_require={
         "test": ["plone.app.testing", "ipython"]
