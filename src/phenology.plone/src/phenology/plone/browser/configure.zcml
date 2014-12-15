@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="phenology.plone">
+
+  <!-- ' phenology.plone' Zope 3 browser layer -->
+  <interface name="phenology.plone-theme"
+      interface="phenology.plone.interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+    />
+  <interface  name="phenology.plone" interface="phenology.plone.interfaces.ILayer" />
+
+  <!-- Viewlets registration -->
+
+  <!-- Zope 3 browser views -->
+  <!--
+  <include package="plone.app.contentmenu"/>
+    <browser:page
+        layer="phenology.plone.interfaces.ILayer"
+        for="phenology.plone.interface.mycontent"
+        menu="plone_displayviews"
+        name="MyView"
+        class=".view.MyView"
+        allowed_interface=".view.IMyView"
+        permission="zope2.View"
+      />
+  -->
+
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory -->
+  <browser:resourceDirectory
+      name="phenology.plone"
+      directory="resources"
+      layer="phenology.plone.interfaces.ILayer"
+    />
+
+
+  <!-- vim:set ft=xml: -->
+</configure>

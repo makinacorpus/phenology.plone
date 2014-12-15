@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlets
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="phenology.plone">
+<!--
+  <portlet
+      addview="phenology.plone.browser.portlet.Portlet"
+      title = "phenology.plone portlet"
+      title = "Add a phenology.plone portlet"
+      remove="True"
+    />
+-->
+</portlets>

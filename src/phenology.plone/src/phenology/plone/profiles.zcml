@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="phenology.plone">
+  <!-- Include direct package dependencies -->
+  <genericsetup:registerProfile
+      name="qi"
+      title="phenology Policy QI"
+      directory="profiles/qi"
+      description="Turn a Plone site into the phenology QIINFO site."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+  <genericsetup:registerProfile
+      name="default"
+      title="phenology.plone"
+      directory="profiles/default"
+      description="Install the phenology.plone addon on this plone site."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+  <genericsetup:registerProfile
+      title="phenology.plone uninstall"
+      name="uninstall"
+      description="Uninstall the phenology.plone addon on tbis plone site."
+      directory="profiles/uninstall"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+  <genericsetup:importStep
+      name="phenology_plone setupVarious"
+      title="various setup for phenology.plone "
+      description="description"
+      handler="phenology.plone.setuphandlers.setupVarious">
+    <depends name="plone-content"/>
+  </genericsetup:importStep>
+  <!-- migration steps -->
+  <genericsetup:importStep
+      name="phenology_plone setupQi"
+      title="Quick Installer products dependencies setup for phenology.plone"
+      description="description"
+      handler="phenology.plone.setuphandlers.setupQi">
+    <depends name="plone-content"/>
+  </genericsetup:importStep>
+  <!-- -->
+  <include package=".upgrades"/>
+</configure>

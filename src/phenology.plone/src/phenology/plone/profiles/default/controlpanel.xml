@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="phenology.plone"
+    purge="False">
+<!--
+    <configlet
+        title="phenology.plone Settings"
+        action_id="plone"
+        appId="phenology.plone"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@phenology.plone-settings"
+        icon_expr="string:${portal_url}/++resource++phenology.plone/phenology.plone_icon.png"
+        visible="True"
+        i18n:attributes="title">
+        <permission>Manage portal</permission>
+    </configlet>
+-->
+</object>
