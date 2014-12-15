@@ -65,7 +65,7 @@ setup(
         # with_ploneproduct_enewsletter
         "Products.EasyNewsletter",
         # -*- Extra requirements: -*-
-        "collective.covers",
+        "collective.cover",
     ],
     extras_require={
         "test": ["plone.app.testing", "ipython"]
