@@ -23,7 +23,7 @@ styles = gulp.task(
         .pipe(gulp.dest(d+'css/'))
         .pipe(minifycss())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(d+'css/')));
+        .pipe(gulp.dest(d+'css/'));
     });
 /*
 js = gulp.task(
