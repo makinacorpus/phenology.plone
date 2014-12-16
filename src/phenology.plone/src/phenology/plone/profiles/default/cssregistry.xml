@@ -24,7 +24,7 @@
     <stylesheet id="++resource++phenology.plone/something.css"/>
     -->
 
-  <stylesheet applyPrefix="True" title="" id="++theme++PhenologyTheme/css/theme.min.css"
+  <stylesheet applyPrefix="True" title="" id="++theme++PhenologyTheme/css/main.css"
     expression="request/HTTP_X_THEME_ENABLED | nothing" />
   <stylesheet applyPrefix="True" title="" id="columns.css"
       expression="not:request/HTTP_X_THEME_ENABLED | nothing" />

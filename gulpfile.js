@@ -12,19 +12,19 @@ var concat = require('gulp-concat');
 var cache = require('gulp-cache');
 var notify = require('gulp-notify');
 var d = "./src/phenology.plone/src/phenology/plone/static/";
-var lessfiles = [d+'less/_plone.less'];
+var main_lessfile = [d+'less/main.less'];
+var lessfiles = [d+'less/**/*.less'];
 var javascripts = [d+'js/theme.js'];
 w = process.cwd();
 styles = gulp.task(
     'styles',
     function() {
-        return gulp.src(lessfiles)
+        return gulp.src(main_lessfile)
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(minifycss())
-        .pipe(rename('theme.min.css'))
-        .pipe(sourcemaps.write('./maps'))
+        .pipe(sourcemaps.write())
         .pipe(notify({message: 'Styles task complete'}))
         .pipe(gulp.dest(d+'css/'));
     });

@@ -4,6 +4,9 @@
 @import "bootstrap.less";
 @import "responsive-utilities.less";
 @import "fonts.less";
+
+@import "objects/top-menu.less";
+
 /*
  * variables
  */
@@ -23,6 +26,7 @@
 @color-bg-portlet: transparent;
 @color-bg-nav: #5b5644;
 @color-bg-wrappernav: #ddd;
+@color-bg-topmenu: black;
 
 @font-family-sans-serif: Klavika, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-base:        @font-family-sans-serif;
@@ -43,7 +47,7 @@ input,
 textarea,
 select {
   font-size: @font-size-content;
-	font-family: Arial, Verdana, sans-serif;
+	font-family: @font-family-sans-serif;
 }
 
 body, body p, .label{
