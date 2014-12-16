@@ -9,5 +9,6 @@
       <dependency>profile-plone.app.theming:default</dependency>
       <dependency>profile-Products.EasyNewsletter:default</dependency>
       <dependency>profile-plone.app.caching:default</dependency>
+      <dependency>profile-plone.app.multilingual:default</dependency>
  </dependencies>
 </metadata>

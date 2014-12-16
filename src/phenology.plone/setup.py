@@ -66,6 +66,7 @@ setup(
         "Products.EasyNewsletter",
         # -*- Extra requirements: -*-
         "collective.cover",
+        "plone.app.multilingual[dexterity]",
     ],
     extras_require={
         "test": ["plone.app.testing", "ipython"]
