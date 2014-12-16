@@ -38,3 +38,4 @@ downloads
 !/src/*phenology.plone*
 !/eggs/*.empty
 !/etc/sys
+node_modules
