@@ -9,6 +9,7 @@ var rename = require('gulp-rename');
 var debug = require('gulp-debug');
 var concat = require('gulp-concat');
 var cache = require('gulp-cache');
+var notify = require('gulp-notify');
 var d = "./src/phenology.plone/src/phenology/plone/static/";
 var lessfiles = [d+'less/_plone.less'];
 var javascripts = [d+'js/theme.js'];
@@ -23,6 +24,7 @@ styles = gulp.task(
         .pipe(gulp.dest(d+'css/'))
         .pipe(minifycss())
         .pipe(rename({suffix: '.min'}))
+        .pipe(notify({message: 'Styles task complete'}))
         .pipe(gulp.dest(d+'css/'));
     });
 /*
