@@ -6,17 +6,22 @@
 @import "fonts.less";
 
 @import "objects/top-menu.less";
+@import "objects/nav.less";
+@import "objects/search.less";
 
 /*
  * variables
  */
 
+@green: #76b729;
 @color-site: #636466;
 @color-focus: #EFEDDB;
 @color-footer-link: #8c8882;
 @color-header-links: inherit;
 @color-portlet: #454435;
 @color-title: #5b5644;
+@color-nav: black;
+@color-nav-selected: @green;
 
 @color-bg-site: white;
 @color-bg-content: transparent;
@@ -24,8 +29,7 @@
 @color-bg-header-content: transparent;
 @color-bg-header:  transparent;
 @color-bg-portlet: transparent;
-@color-bg-nav: #5b5644;
-@color-bg-wrappernav: #ddd;
+@color-bg-wrappernav: #eeefec;
 @color-bg-topmenu: black;
 
 @font-family-sans-serif: Klavika, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -95,16 +99,9 @@ a:focus{
   position: absolute;
   z-index: 5;
 }
-#portal-searchbox{
-  margin: 5px 0;
-  margin-top: 7em;
-}
 #nolivesearchGadget{
   width: 146px; height: 20px;
   vertical-align: top;
-}
-#portal-searchbox-wrapper{
-  height: 42px;
 }
 #portal-languageselector{
   background-color: transparent;
