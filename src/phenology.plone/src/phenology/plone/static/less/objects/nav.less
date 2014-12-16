@@ -2,14 +2,31 @@
     background-color: @color-bg-wrappernav;
     #portal-globalnav {
         background-color: transparent;
-        li {
+        & > li {
+            position: relative;
             a {
                 background-color: transparent;
                 color: @color-nav;
+                border: 0;
             }
             &.selected {
                 a {
                     color: @color-nav-selected;
+                }
+            }
+            .subsections {
+                display: none;
+                position: absolute;
+                background-color: white;
+                border: 1px @color-bg-wrappernav solid;
+                z-index: 10;
+                width: 250px;
+                &.active {
+                    display: block;
+                }
+                li {
+                    display: block;
+                    top: 50px;
                 }
             }
         }

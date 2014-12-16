@@ -1,30 +1,30 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __docformat__ = 'restructuredtext en'
 
-
-#from zope import component
+from plone import api
+from plone.memoize.view import memoize
+from Products.Five import BrowserView
 from zope import interface
 
-from Products.Five import BrowserView
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-#from Products.CMFCore.utils import getToolByName
-#from plone.registry.interfaces import IRegistry
-#from Acquisition import aq_parent
 
-
-class IMyView(interface.Interface):
+class IPhenologyView(interface.Interface):
     """Marker interface"""
 
 
-class MyView(BrowserView):
-    """MY view doc"""
-    interface.implements(IMyView)
-    template = ViewPageTemplateFile('template.pt')
+class PhenologyView(BrowserView):
+    """
+    """
+    interface.implements(IPhenologyView)
 
-    def __call__(self, **params):
-        """."""
-        params = {}
-        return self.template(**params)
-
-# vim:set et sts=4 ts=4 tw=80:
+    @memoize
+    def getSubSections(self, folder_id):
+        root = api.portal.get_navigation_root(self.context)
+        catalog = api.portal.get_tool(name='portal_catalog')
+        subsections = catalog(
+            path={
+                'query' : '/'.join(root.getPhysicalPath() + (folder_id,)),
+                'depth': 1,
+            },
+            exclude_from_nav=False,
+        )
+        return subsections

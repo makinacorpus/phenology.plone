@@ -36,6 +36,14 @@
       layer="phenology.plone.interfaces.ILayer"
     />
 
+  <!-- Utilities view -->
+  <browser:page
+      for="*"
+      name="phenologyview"
+      class=".view.PhenologyView"
+      permission="zope.Public"
+      allowed_interface=".view.IPhenologyView"
+      />
 
   <!-- vim:set ft=xml: -->
 </configure>

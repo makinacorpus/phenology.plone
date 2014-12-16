@@ -15,7 +15,6 @@
 
 @green: #76b729;
 @color-site: #636466;
-@color-focus: #EFEDDB;
 @color-footer-link: #8c8882;
 @color-header-links: inherit;
 @color-portlet: #454435;
@@ -70,9 +69,6 @@ h1{
 }
 h2{
   font-size: @font-size-title2;
-}
-a:focus{
-  outline: @color-focus dotted 3px;
 }
 #visual-portal-wrapper {
   margin-top: 1em;
@@ -197,6 +193,17 @@ div#content{
 #contentActionMenus {
   margin-top: 1px;
   right: 0;
+  a:focus, a:hover {
+    text-decoration: none;
+  }
+  dt > a {
+    padding: 0.3em;
+  }
+  dd li {
+    a {
+      padding: 0.5em;
+    }
+  }
 }
 #contentActionMenus  dl {
   margin-bottom: 0px;
