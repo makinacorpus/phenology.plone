@@ -19,6 +19,10 @@ phenology.initialize_sections = function () {
         }
         return false;
     });
+    $(document).click(function() {
+        $('.subsections-open.active').removeClass('active');
+        $('.subsections.active').removeClass('active');
+    });
 };
 phenology.equalHeight = function(group) {
     var tallest = 0;
