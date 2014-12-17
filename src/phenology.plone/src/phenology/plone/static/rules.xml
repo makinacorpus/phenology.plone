@@ -31,7 +31,5 @@
   <append css:content-children="#portal-column-two"     css:theme="#portal-column-two" />
 
   <!-- FOOTER -->
-  <append css:content="#portal-colophon"       css:theme="#portal-colophon-wrapper" />
   <append css:content="#portal-siteactions"    css:theme="#portal-siteactions-wrapper" />
-  <append css:content="#portal-footer"         css:theme="#plone-portal-footer-wrapper" />
 </rules>

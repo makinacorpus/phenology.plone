@@ -8,12 +8,16 @@
 @import "objects/top-menu.less";
 @import "objects/nav.less";
 @import "objects/search.less";
+@import "objects/footer.less";
 
 /*
  * variables
  */
 
 @green: #76b729;
+@grey: #eeeeec;
+@greydark: #c9cac5;
+@black: #1d1d1b;
 @color-site: #636466;
 @color-footer-link: #8c8882;
 @color-header-links: inherit;
@@ -21,6 +25,7 @@
 @color-title: #5b5644;
 @color-nav: black;
 @color-nav-selected: @green;
+@color-footer: @black;
 
 @color-bg-site: white;
 @color-bg-content: transparent;
@@ -30,6 +35,9 @@
 @color-bg-portlet: transparent;
 @color-bg-wrappernav: #eeefec;
 @color-bg-topmenu: black;
+@color-bg-footer: @grey;
+
+@color-border-footer: @greydark;
 
 @font-family-sans-serif: Klavika, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-base:        @font-family-sans-serif;
@@ -217,21 +225,6 @@ div.portletAssignments div.portletHeader {
   height: 29px;
   padding: 10px 0 0 10px;
 }
-#portal-footer-wrapper{
-  padding-top: 30px;
-  li{
-    font-size: @font-size-footer;
-    a{
-      color: @color-footer-link;
-    }
-  }
-}
-#portal-colophon{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: @color-footer-link;
-}
-
 
 /*
  * RESPONSIVE
