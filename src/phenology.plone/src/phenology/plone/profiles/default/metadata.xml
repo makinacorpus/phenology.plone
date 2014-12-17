@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>1000</version>
+  <version>1001</version>
   <dependencies>
   <!-- QuickInstalled dependencies -->
       <dependency>profile-phenology.plone:qi</dependency>
@@ -10,5 +10,6 @@
       <dependency>profile-Products.EasyNewsletter:default</dependency>
       <dependency>profile-plone.app.caching:default</dependency>
       <dependency>profile-plone.app.multilingual:default</dependency>
+      <dependency>profile-plone.multilingualbehavior:default</dependency>
  </dependencies>
 </metadata>

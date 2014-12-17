@@ -38,6 +38,12 @@
         handler=".upgrade_1001"
       />
   -->
-
-  <!-- vim:set ft=xml: -->
+    <genericsetup:upgradeStep
+        profile="phenology.plone:default"
+        source="1000"
+        destination="1001"
+        title="phenology.plone - 1001"
+        description=""
+        handler=".upgrades.upgrade_1001"
+      />
 </configure>
