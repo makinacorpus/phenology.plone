@@ -11,5 +11,6 @@
       <dependency>profile-plone.app.caching:default</dependency>
       <dependency>profile-plone.app.multilingual:default</dependency>
       <dependency>profile-plone.multilingualbehavior:default</dependency>
+      <dependency>profile-collective.cover:default</dependency>
  </dependencies>
 </metadata>
