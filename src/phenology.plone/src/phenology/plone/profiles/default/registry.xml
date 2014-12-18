@@ -1,8 +1,15 @@
 <?xml version="1.0"?>
 <registry>
-  <!--
-    <records name="phenology.plone.interfaces.ISomeInterface.something" />
-  -->
+
+  <record name="collective.cover.controlpanel.ICoverSettings.grid_system" interface="collective.cover.controlpanel.ICoverSettings" field="grid_system">
+    <field type="plone.registry.field.Choice">
+      <default>deco16_grid</default>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="collective.cover" ns0:translate="">Choose a grid system</description>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="collective.cover" ns0:translate="">Grid System</title>
+      <vocabulary>collective.cover.GridSystems</vocabulary>
+    </field>
+    <value>bootstrap3</value>
+  </record>
 
 
   <!-- CACHING SETTINGS -->
