@@ -31,5 +31,7 @@
   
   <include package="plone.resource" file="meta.zcml"/>
   <plone:static directory="static" type="theme" name="PhenologyTheme" />
+
+  <utility factory=".grid.Bootstrap3" name="bootstrap3" />
 </configure>
 <!-- vim:set ft=xml: -->
