@@ -102,6 +102,7 @@ def create_cover(folder, purge=False):
             folder.news.aggregator.title = "News"
         obj = folder[data['collection']].aggregator
         tile.populate_with_object(obj)
+        tile.slidemode = data['slidemode']
         tile.set_tile_configuration(data['config'])
 
     folder.setDefaultPage(COVER_ID)
