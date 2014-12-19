@@ -23,7 +23,7 @@ RICHTEXT_TILES = [
     },
     {
         'id': 'middle-banner',
-        'content': """<<table>
+        'content': """<table>
 <tbody>
 <tr>
 <td>
@@ -102,7 +102,7 @@ def create_cover(folder, purge=False):
 
     folder.setDefaultPage(COVER_ID)
 
-def upgrade_1001(context):
+def init_content(context):
     portal = api.portal.get()
     setupTool = SetupMultilingualSite()
     setupTool.setupSite(portal)
