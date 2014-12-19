@@ -3,7 +3,7 @@
    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
    i18n:domain="collective.cover">
 
-  <property name="behaviors">
+  <property name="behaviors" purge="false">
     <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable" />
   </property>
 

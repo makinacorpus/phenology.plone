@@ -8,7 +8,40 @@ from plone.tiles.interfaces import ITileDataManager
 
 COVER_ID = "homepage"
 COVER_TITLE = "Phenoclim"
-COVER_LAYOUT = """[{"type": "row", "children": [{"data": {"layout-type": "column", "column-size": 12}, "type": "group", "children": [{"tile-type": "collective.cover.richtext", "type": "tile", "id": "top-banner"}], "roles": ["Manager"], "id": "group1"}]}, {"type": "row", "children": [{"data": {"layout-type": "column", "column-size": 12}, "type": "group", "children": [{"tile-type": "collective.cover.collection", "type": "tile", "id": "slideshow"}], "roles": ["Manager"]}]}, {"type": "row", "children": [{"data": {"layout-type": "column", "column-size": 8}, "type": "group", "children": [{"tile-type": "collective.cover.richtext", "type": "tile", "id": "middle-banner"}], "roles": ["Manager"]}, {"data": {"layout-type": "column", "column-size": 4}, "type": "group", "children": [{"tile-type": "collective.cover.embed", "type": "tile", "id": "twitter-tile"}], "roles": ["Manager"]}]}]"""
+COVER_LAYOUT = """[{
+    "type": "row",
+    "children": [{
+        "data": {"layout-type": "column", "column-size": 12},
+        "type": "group",
+        "children": [{"tile-type": "collective.cover.richtext", "type": "tile", "id": "top-banner"}],
+        "roles": ["Manager"],
+        "id": "group1"}]
+    }, {
+    "type": "row",
+    "children": [{
+        "data": {"layout-type": "column", "column-size": 11},
+        "type": "group",
+        "children": [{"tile-type": "collective.cover.collection", "type": "tile", "id": "slideshow"}],
+        "roles": ["Manager"]
+        }, {
+        "data": {"layout-type": "column", "column-size": 1},
+        "type": "group",
+        "children": [{"tile-type": "collective.cover.embed", "type": "tile", "id": "sociallinks-tile"}],
+        "roles": ["Manager"]}
+        ]
+    }, {
+    "type": "row",
+    "children": [{
+        "data": {"layout-type": "column", "column-size": 8},
+        "type": "group",
+        "children": [{"tile-type": "collective.cover.richtext", "type": "tile", "id": "middle-banner"}],
+        "roles": ["Manager"]
+        }, {
+        "data": {"layout-type": "column", "column-size": 4},
+        "type": "group",
+        "children": [{"tile-type": "collective.cover.embed", "type": "tile", "id": "twitter-tile"}],
+        "roles": ["Manager"]}]}]
+"""
 RICHTEXT_TILES = [
     {
         'id': 'top-banner',
@@ -41,7 +74,17 @@ EMBED_TILES = [
         'id': 'twitter-tile',
         'content': """<a class="twitter-timeline"  href="https://twitter.com/creamontblanc" data-widget-id="545531077637701634">Tweets de @creamontblanc</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>""",
-    }
+    },
+    {
+        'id': 'sociallinks-tile',
+        'content': """<p>Nous suivre:</p>
+<ul>
+<li><a href="#"><img src="picto-facebook.png"/></a></li>
+<li><a href="#"><img src="picto-facebook.png"/></a></li>
+<li><a href="#"><img src="picto-facebook.png"/></a></li>
+<li><a href="#"><img src="picto-facebook.png"/></a></li>
+</ul>""",
+    },
 ]
 COLLECTION_TILES = [
     {
