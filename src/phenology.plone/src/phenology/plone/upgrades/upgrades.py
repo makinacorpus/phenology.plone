@@ -96,6 +96,10 @@ def create_cover(folder, purge=False):
         if not data['collection'] in folder:
             news_fr = portal['fr'][data['collection']]
             api.content.copy(source=news_fr, target=folder)
+            api.content.transition(obj=folder.news, transition='publish')
+            folder.news.title = "News"
+            api.content.transition(obj=folder.news.aggregator, transition='publish')
+            folder.news.aggregator.title = "News"
         obj = folder[data['collection']].aggregator
         tile.populate_with_object(obj)
         tile.set_tile_configuration(data['config'])
