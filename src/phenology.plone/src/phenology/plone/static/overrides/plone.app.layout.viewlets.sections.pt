@@ -3,24 +3,30 @@
      i18n:domain="plone">
     <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
 
-    <ul id="portal-globalnav"
+    <ul id="portal-globalnav-bs"  class="nav navbar-nav"
         tal:define="selected_tab python:view.selected_portal_tab;
           phenologyview python:context.unrestrictedTraverse('@@phenologyview');">
       <tal:tabs tal:repeat="tab portal_tabs">
-        <li tal:define="tid tab/id"
+        <li tal:define="tid tab/id;
+                        has_subsections python:phenologyview.hasSubSections(tid) or None;
+                        class_active python:selected_tab==tid and 'active' or 'plain';
+                        class_dropdown python:has_subsections and 'dropdown' or '';"
              tal:attributes="id string:portaltab-${tid};
-                            class python:selected_tab==tid and 'selected' or 'plain'"
-            >
+                            class string:${class_active} ${class_dropdown};">
+            
           <a href=""
                tal:content="tab/name"
                tal:attributes="href tab/url;
                                title tab/description|nothing;
                                target tab/link_target|nothing;
-                               class python:tab['name']!='Home' and 'subsections-open' or ''">
+                               class python:has_subsections and 'subsections-open ' or '';
+                               data-toggle python:has_subsections and 'dropdown' or '';
+                               aria-expanded string:false;
+                               role string:button">
             Tab Name
           </a>
-          <tal:subsections tal:condition="python:tab['name']!='Home'">
-            <ul class="subsections" tal:define="subsections python:phenologyview.getSubSections(tab['id'])">
+          <tal:subsections tal:condition="has_subsections">
+            <ul class="dropdown-menu" tal:define="subsections python:phenologyview.getSubSections(tab['id'])">
               <li tal:repeat="link subsections">
                 <a tal:attributes="href link/getPath" tal:content="link/Title">link</a>
               </li>

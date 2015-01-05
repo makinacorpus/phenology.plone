@@ -1,34 +1,19 @@
-#nav-wrapper {
-    background-color: @color-bg-wrappernav;
-    #portal-globalnav {
-        background-color: transparent;
-        & > li {
-            position: relative;
-            a {
-                background-color: transparent;
-                color: @color-nav;
-                border: 0;
-            }
-            &.selected {
-                a {
-                    color: @color-nav-selected;
-                }
-            }
-            .subsections {
-                display: none;
-                position: absolute;
-                background-color: white;
-                border: 1px @color-bg-wrappernav solid;
-                z-index: 10;
-                width: 250px;
-                &.active {
-                    display: block;
-                }
-                li {
-                    display: block;
-                    top: 50px;
-                }
-            }
+#navbar-wrapper {
+    margin-bottom: 0;
+}
+
+#portal-globalnav-bs {
+    & > li {
+        a {
+            padding: 1em 1em 0.5em 1em;
+        }
+        & > a {
+            font-size: 1.1428em;
+            text-transform: uppercase;
+        }
+        .dropdown-menu {
+            border-radius: 0;
         }
     }
 }
+

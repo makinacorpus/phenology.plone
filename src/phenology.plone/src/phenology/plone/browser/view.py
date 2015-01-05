@@ -17,6 +17,12 @@ class PhenologyView(BrowserView):
     interface.implements(IPhenologyView)
 
     @memoize
+    def hasSubSections(self, folder_id):
+        if len(self.getSubSections(folder_id)) > 0 :
+            return True
+        return False
+
+    @memoize
     def getSubSections(self, folder_id):
         root = api.portal.get_navigation_root(self.context)
         catalog = api.portal.get_tool(name='portal_catalog')
