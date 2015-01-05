@@ -8,8 +8,10 @@
 @import "objects/header.less";
 @import "objects/nav.less";
 @import "objects/search.less";
+@import "objects/breadcrumb.less";
 @import "objects/footer.less";
 @import "objects/home.less";
+@import "objects/button.less";
 
 /*
  * variables
@@ -19,11 +21,10 @@
 @pheno-gray-e: #eeeeec;
 @pheno-gray-c: #c9cac5;
 @black: #1d1d1b;
-@color-site: #636466;
 @color-footer-link: #8c8882;
 @color-header-links: inherit;
-@color-portlet: #454435;
-@color-title: #5b5644;
+@color-portlet: @text-color;
+@color-title: @green;
 @color-nav: black;
 @color-nav-selected: @green;
 @color-footer: @black;
@@ -48,33 +49,17 @@
 @font-family-sans-serif: Klavika, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-breadcrumbs: 14px;
-@font-size-portal-siteactions: 10px;
-@font-size-title: 24px;
-@font-size-title2: 20px;
-@font-size-content: 14px;
-@font-size-portlet: 14px;
-@font-size-footer: 12px;
-@font-size-footer-social: 13px;
-@font-size-submenu: 13px;
+@font-size-breadcrumbs: 1em;
+@font-size-portal-siteactions: 0,9286em;
+@font-size-title: 1,7143em;
+@font-size-title2: 1,4286em;
+@font-size-content: 1em;
+@font-size-portlet: 1em;
+@font-size-footer: 0,8571em;
+@font-size-footer-social: 0,9286em;
+@font-size-submenu: 0,9286em;
 
 /* global layout */
-body #content,
-input,
-textarea,
-select {
-  font-size: @font-size-content;
-    font-family: @font-family-sans-serif;
-}
-
-body, body p, .label{
-  color: @color-site;
-}
-body, body p{
-}
-.container > .row {
-  background-color: @color-bg-site;
-}
 h1{
   font-size: @font-size-title;
   font-weight: normal;
@@ -84,6 +69,9 @@ h1{
 h2{
   font-size: @font-size-title2;
 }
+a:link, a:visited {
+    color: @link-color;
+}
 #visual-portal-wrapper {
   margin-top: 1em;
 }
@@ -92,33 +80,29 @@ h2{
 /*
  * content layout & breadcrumbs
  */
-#portal-breadcrumbs{
-  margin: 10px 0 10px 0;
-  font-size: @font-size-breadcrumbs;
-
-  #breadcrumbs-current{
-    border-bottom: 1px solid #bbb;
-  }
-}
 
 #content{
   background-color: @color-bg-content;
   margin: 0;
   font-size: @font-size-content;
-  #content-core,
-  #parent-fieldname-description{
-    padding: 10px;
+    a:link, a:visited {
+        color: @link-color;
+    }
+  .documentDescription, #description {
+    color: @text-color;
+  }
+  #parent-fieldname-description {
+    margin-bottom: 1em;
   }
   .documentByLine{
     padding-left: 10px;
   }
 }
-#portal-column-one, #portal-column-two{
-  padding-top: 10px;
-  padding-top: 10px;
-}
+
 #portal-column-one,
-#portal-column-two{
+#portal-column-two {
+  padding-top: 10px;
+  padding-top: 10px;
   /* TODO: Add all content types here*/
   .contenttype-folder,
   .contenttype-topic,
