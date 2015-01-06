@@ -4,15 +4,6 @@
 @import "custom_bootstrap.less";
 @import "fonts.less";
 
-@import "objects/top-menu.less";
-@import "objects/header.less";
-@import "objects/nav.less";
-@import "objects/search.less";
-@import "objects/breadcrumb.less";
-@import "objects/footer.less";
-@import "objects/home.less";
-@import "objects/button.less";
-
 /*
  * variables
  */
@@ -35,7 +26,7 @@
 @color-bg-footer: transparent;
 @color-bg-header-content: transparent;
 @color-bg-header:  transparent;
-@color-bg-portlet: transparent;
+@color-bg-portlet: @green;
 @color-bg-wrappernav: @pheno-gray-e;
 @color-bg-langselect: @pheno-gray-5;
 @color-bg-topmenu: black;
@@ -53,30 +44,42 @@
 
 @font-size-breadcrumbs: 1em;
 @font-size-portal-siteactions: 0,9286em;
-@font-size-title: 1,7143em;
-@font-size-title2: 1,4286em;
 @font-size-content: 1em;
 @font-size-portlet: 1em;
-@font-size-footer: 0,8571em;
-@font-size-footer-social: 0,9286em;
+@font-size-footer: 1em;
 @font-size-submenu: 0,9286em;
 
+/* Import components */
+@import "objects/top-menu.less";
+@import "objects/header.less";
+@import "objects/nav.less";
+@import "objects/search.less";
+@import "objects/breadcrumb.less";
+@import "objects/footer.less";
+@import "objects/home.less";
+@import "objects/button.less";
+@import "objects/portlets.less";
+
+
 /* global layout */
-h1{
-  font-size: @font-size-title;
-  font-weight: normal;
+h1, h2 {
   color: @color-title;
-  letter-spacing: 0; word-spacing: 0.1em;
+  letter-spacing: 0;
 }
-h2{
-  font-size: @font-size-title2;
+h1 {
+  text-transform: uppercase;
+  word-spacing: 0.1em;
+  padding: 14px 0;
+  background: url('../images/border-heading.png') no-repeat left bottom transparent;
 }
+
 a:link, a:visited {
     color: @link-color;
 }
 #visual-portal-wrapper {
   margin-top: 1em;
 }
+
 
 
 /*
@@ -92,6 +95,8 @@ a:link, a:visited {
     }
   .documentDescription, #description {
     color: @text-color;
+    margin-bottom: 0.5em;
+    font-family: @font-family-base;
   }
   #parent-fieldname-description {
     margin-bottom: 1em;
@@ -116,17 +121,6 @@ a:link, a:visited {
   }
 }
 /* content */
-#portlets-below, #portlets-above {
-  padding: 0 10px;
-  .portletWrapper{width: 100%}
-}
-.template-manage-portlets #portletmanager-plone-leftcolumn{
-  margin-top: 50px;
-}
-.portlet{
-  background-color: @color-bg-portlet;
-  font-size: @font-size-portlet;
-}
 #edit-bar {
   border-bottom: none;
   min-height: 26px;
@@ -181,14 +175,6 @@ div.searchSection,
 #portal-personaltools,
 #edit-bar{
   display:none;
-}
-#portal-logo{
-  display: block;
-  float: left;
-  img{
-    display: block;
-    position: static;
-  }
 }
 
 #footer-wrapper {

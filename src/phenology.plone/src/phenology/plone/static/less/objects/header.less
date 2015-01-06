@@ -4,9 +4,23 @@
 #portal-tagline {
     color: @green;
     line-height: 1.1em;
-    margin-top: 1em;
-    font-size: 1.25em;
 }
 #portal-logo {
     margin: 0;
+}
+
+@media (max-width: @screen-xs-max) {
+    #portal-logo, #crea-logo {
+            max-width: 100%;
+        img {
+            max-width: 100%;
+        }
+    }
+}
+@media (min-width: @screen-sm-min) {
+    #portal-tagline {
+        margin-top: 1em;
+        font-size: 1.25em;
+    }
+
 }
