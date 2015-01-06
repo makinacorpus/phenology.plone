@@ -1,0 +1,87 @@
+.carousel-indicators {
+    padding: 2px 8px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+    li {
+        width: 12px;
+        height: 12px;
+        background-color: @color-bg-slideshow-inactive;
+        border-color: @color-bg-slideshow-inactive;
+        &.active {
+            border-color: @color-bg-slideshow-active;
+        }
+    }
+}
+
+.carousel-control {
+    height: @carousel-control-width;
+    top: 50%;
+    margin-top: -@carousel-control-width / 2;
+    margin-left: 0;
+    font-size: @carousel-control-font-size;
+    &.right,
+    &.left {
+        background: #CCC;
+        border-radius: @carousel-control-width / 2;
+    }
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right,
+    .icon-prev,
+    .icon-next {
+      width: @carousel-control-font-size;
+      height: @carousel-control-font-size;
+      margin-top: -@carousel-control-font-size /2;
+      top: 50%;
+    }
+    .glyphicon-chevron-left,
+    .icon-prev {
+      margin-left: -@carousel-control-font-size /2;
+    }
+    .glyphicon-chevron-right,
+    .icon-next {
+      margin-right: -@carousel-control-font-size /2;
+    }
+    &.left {
+      margin-left: 5px;
+    }
+    &.right {
+      margin-right: 5px;
+    }
+    // Scale up controls for tablets and up
+    @media screen and (min-width: @screen-sm-min) {
+        .glyphicon-chevron-left,
+        .glyphicon-chevron-right,
+        .icon-prev,
+        .icon-next {
+          width: @carousel-control-font-size;
+          height: @carousel-control-font-size;
+          margin-top: -@carousel-control-font-size /2;
+          top: 50%;
+          font-size: @carousel-control-font-size;
+        }
+        &.left {
+          margin-left: -@carousel-control-font-size /2;
+        }
+        &.right {
+          margin-right: -@carousel-control-font-size /2;
+        }
+    }
+}
+
+
+/* Plone overrides */
+
+#content {
+    a:link.carousel-control {
+        border-bottom: none;
+    }
+    .carousel-indicators {
+        margin-left: 0;
+        li {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+    } 
+} 
