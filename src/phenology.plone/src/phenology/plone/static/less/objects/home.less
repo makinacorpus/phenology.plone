@@ -15,9 +15,13 @@
     }
 }
 
-
 #slideshow {
     background-color: @color-bg-slideshow;
+    .item img {
+        height: 240px;
+        width: auto;
+        max-width: none;
+    }
     .carousel-indicators {
         background-color: @color-bg-slideshow-indicators;
         display: none; // TODO : make it work
@@ -25,13 +29,23 @@
     .carousel-caption {
         background-color: rgba(0,0,0,0.2);
         color: white;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-left: 80px;
+        padding-right: 80px;
         h2 {
             margin-top: 0;
+            text-transform: uppercase;
+            padding-bottom: 14px;
+            font-size: 1em;
+            background: url('../images/border-heading.png') no-repeat center bottom transparent;
         }
         .documentPublished {
             font-weight: bold;
             &:before {
-                content: ">";
+                content: "> ";
             }
         }
     }
@@ -40,25 +54,67 @@
         h2 { margin: 0; }
     }
     @media screen and (min-width: @screen-xs-min) {
+        .item img {
+            height: 360px;
+        }
+    }
+    @media screen and (min-width: @screen-sm-min) {
         .carousel-indicators {
             text-align: right;
             width: 40%;
         }
         .carousel-caption {
+            text-align: left;
             background-color: transparent;
             width: 30%;
             top: 0;
             left: 0;
-            padding-left: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            h2 {
+                font-size: 1.7em;
+                background-position: left bottom;
+            }
         }
-        .item {
-            img {
-                margin-left: 30%;
+        .item img {
+            margin-left: 30%;
+        }
+        .carousel-control {
+            &.left {
+              margin-left: @carousel-control-font-size /2;
+              left: 30%;
+            }
+            &.right {
+              margin-right: @carousel-control-font-size /2;
             }
         }
     }
-    @media screen and (min-width: @screen-sm-min) {
-        .item {
+    @media screen and (min-width: @screen-md-min) {
+        margin-right: -@grid-gutter-width / 2;
+    }
+}
+
+#sociallinks-tile {
+    text-align: center;
+    background-color: @pheno-gray-e;
+    ul {
+        list-style: none;
+        margin-left: 0;
+    }
+    li {
+        margin-bottom: 1.5em;
+        a:link {
+            border-bottom: none;
+        }
+    }
+    @media screen and (min-width: @screen-md-min) {
+        height: 360px;
+        margin-left: -@grid-gutter-width / 2;
+    }
+    @media screen and (max-width: @screen-sm-max) {
+        li {
+            display: inline-block;
+            margin-right: 10px;
         }
     }
 }
@@ -83,3 +139,4 @@
         color: black;
     }
 }
+

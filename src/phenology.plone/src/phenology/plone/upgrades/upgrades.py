@@ -45,14 +45,11 @@ COVER_LAYOUT = """[{
 RICHTEXT_TILES = [
     {
         'id': 'top-banner',
-        'content': """<table class="invisible">
-<tbody>
-<tr><th>
-<p>Phénoclim est un programme scientifique et pédagogique<br />qui invite le public à mesure l'impact du changement climatique<br />sur la végétation en montage. </p>
-<div></div>
-</th><th><a href="#">Inscrivez-vous !</a></th></tr>
-</tbody>
-</table>""",
+        'content': """<p><a class="btn btn-halo btn-lg pull-right" 
+href="#" data-mce-href="#">Inscrivez-vous !</a>
+Phénoclim est un programme scientifique et pédagogique<br>
+qui invite le public à mesure l'impact du changement climatique<br>
+sur la végétation en montage.</p>""",
     },
     {
         'id': 'middle-banner',
