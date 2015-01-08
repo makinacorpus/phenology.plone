@@ -32,4 +32,5 @@
 
   <!-- FOOTER -->
   <append css:content="#portal-siteactions"    css:theme="#portal-siteactions-wrapper" />
+  <append css:content="#portal-colophon"    css:theme="#colophon" />
 </rules>
