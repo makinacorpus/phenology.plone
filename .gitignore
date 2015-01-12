@@ -34,6 +34,7 @@ downloads
 /venv/
 /www/apache.reverseproxy.conf
 /www/nginx.reverseproxy.conf
+/www/htusers*
 !/src/zopelib
 !/src/*phenology.plone*
 !/eggs/*.empty

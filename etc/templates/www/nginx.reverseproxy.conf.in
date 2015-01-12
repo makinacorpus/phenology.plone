@@ -17,6 +17,12 @@ server {
     root ${parts.v['reverse-proxy-docroot']};
     access_log ${parts.buildout.directory}/var/log/nginx/${options.host}.access.log;
     error_log  ${parts.buildout.directory}/var/log/nginx/${options.host}.error.log;
+
+{% if parts.v.get('http-users', '').strip() %}
+auth_basic "Restricted website";
+auth_basic_user_file ${parts.buildout.directory}/www/htusers;
+{% end %}
+
     location /zmiroot/ {
         proxy_pass  http://${options.uname}/VirtualHostBase/http/${options.host}:${options.port}/VirtualHostRoot/_vh_zmiroot/;
     }
@@ -39,4 +45,4 @@ server {
         }
     }
 }
-e vim: set sts=4 ts=4 et tw=0 ai et nocompatible:
+# vim: set sts=4 ts=4 et tw=0 ai et nocompatible:

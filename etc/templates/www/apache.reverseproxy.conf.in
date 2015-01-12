@@ -16,6 +16,13 @@ DirectoryIndex   index.html index.htm
     <IfVersion >= 2.3>
     Require all granted
     </IfVersion>
+{% if parts.v.get('http-users', '').strip() %}
+AuthType Basic
+AuthName "Restricted website"
+AuthBasicProvider file
+AuthUserFile ${parts.buildout.directory}/www/htusers;
+Require valid-user
+{% end %}
 </Directory>
 ProxyRequests off
 <Proxy *>

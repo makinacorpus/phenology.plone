@@ -12,6 +12,7 @@
               "{{locations.resetperms}}" "${@}" \
               --dmode '0770' --fmode '0770'  \
               --paths "{{cfg.project_root}}"/bin \
+              --paths "{{cfg.data.buildout.settings.buildout['parts-directory']}}" \
               --users www-data \
               --users {% if not cfg.no_user%}{{cfg.user}}{% else -%}root{% endif %} \
               --groups {{cfg.group}} \

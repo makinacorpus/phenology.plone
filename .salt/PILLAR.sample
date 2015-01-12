@@ -26,7 +26,6 @@ makina-projects.projectname:
     server_aliases: |
                     SEE BELOW:
                     buildout/settings/v/server_aliases
-    server_aliases: []
     ui: "{data_root}/ui"
     installer_url: "http://launchpad.net/plone/${plone_major}/${plone_ver}/+download/Plone-${plone_ver}-UnifiedInstaller.tgz"
     plone_arc: "{data_root}/ui/unifiedinstaller.tgz"
@@ -50,6 +49,12 @@ makina-projects.projectname:
           eggs-directory: '{cache-directory}/eggs'
           parts-directory: '{var-directory}/parts'
         v:
+          # activate http auth
+          #http_users: |
+          #
+          #            # comment is for buildout
+          #                foo:test
+          #                root:bar
           #space separated list of domains
           server_aliases: ""
           sys-user: "{user}"
@@ -61,9 +66,9 @@ makina-projects.projectname:
           proxycache_size: '256M'
           anon_cache_time: '600s'
           autostart_instance1: '{autostart}'
-          autostart_instance2: '{autostart}'
-          autostart_instance3: '{autostart}'
-          autostart_instance4: '{autostart}'
+          autostart_instance2: 'false'
+          autostart_instance3: 'false'
+          autostart_instance4: 'false'
           plonesite: 'Plone'
           zeo-pack-days: '0'
           z2-log-level: 'INFO'
@@ -140,4 +145,7 @@ makina-projects.projectname:
       settings:
         v:
           autostart_instance1: 'true'
+          autostart_instance2: 'false'
+          autostart_instance3: 'false'
+          autostart_instance4: 'false'
 # vim:set ft=yaml ts=2 sts=2:
