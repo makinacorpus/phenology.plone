@@ -11,6 +11,7 @@ prepreq-pre-{{cfg.name}}:
 prepreq-{{cfg.name}}:
   pkg.{{salt['mc_pkgs.settings']()['installmode']}}:
     - pkgs:
+      - apache2-utils
       - liblcms2-2
       - liblcms2-dev
       - autoconf
@@ -68,7 +69,7 @@ var-dirs-{{cfg.name}}:
 
 var-dir-{{cfg.name}}:
   file.symlink:
-    - name: {{cfg.zroot}}/var
+    - name: {{data.zroot}}/var
     - target: {{data['var-directory'] }}
     - watch:
        - file: var-dirs-{{cfg.name}}
@@ -94,7 +95,7 @@ var-dir-{{cfg.name}}:
   cmd.run:
     - name: tar xzvf {{data.plone_arc}} && touch skip_plone_unpack
     - unless: |
-              pv="$(grep dist.plone.org/release "{{cfg.zroot}}/etc/base.cfg"|head -n1|sed -re "s/.*dist.plone.org\/release\/(([0-9]+\.?){3})/\1/g")"
+              pv="$(grep dist.plone.org/release "{{data.zroot}}/etc/base.cfg"|head -n1|sed -re "s/.*dist.plone.org\/release\/(([0-9]+\.?){3})/\1/g")"
               test -e skip_plone_unpack && test -e "{{data.ui}}/Plone-${pv}-UnifiedInstaller/install.sh"
     - cwd: {{data.ui}}
     - user: {{cfg.user}}
