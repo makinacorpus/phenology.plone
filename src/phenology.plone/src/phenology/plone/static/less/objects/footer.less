@@ -23,6 +23,28 @@
     #footer-banner {
         border-left: 1px @color-border-footer solid;
         border-right: 1px @color-border-footer solid;
+        padding: 0 1em;
+        .banner-wrapper {
+            background: transparent url('../images/footer-app.png') no-repeat;
+            padding: 1em 1em 1em 7em;
+            height: 109px;
+            h3 {
+                font-size: 16px;
+                color: @color-footer-banner;
+                margin: 0;
+            }
+            p {
+                font-size: 88%;
+            }
+            .store-links {
+                float: right;
+                a.store {
+                    display: block;
+                    text-align: right;
+                    padding: 0.3em;
+                }
+            }
+        }
     }
     #portal-footer {
         background-color: transparent;   
@@ -36,6 +58,7 @@
         }
     }
     #colophon {
+        margin-top: 2em;
         background-color: white;
     }
 }
