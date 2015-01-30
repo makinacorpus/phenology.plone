@@ -16,3 +16,5 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: phenology.plone\n"
 
+msgid "Se connecter / S'inscrire"
+msgstr "Se connecter / S'inscrire"
