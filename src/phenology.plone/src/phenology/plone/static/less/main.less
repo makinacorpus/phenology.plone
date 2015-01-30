@@ -178,6 +178,17 @@ body#content.mceContentBody {
   font-size: 14px;
 }
 
+/* MIXINS */
+.smallborder() {
+    &::after {
+        content: " ";
+        display: block;
+        border-bottom: 1px white solid;
+        width: 65px;
+        margin-top: 8px;
+    }
+}
+
 /*
  * RESPONSIVE
  */

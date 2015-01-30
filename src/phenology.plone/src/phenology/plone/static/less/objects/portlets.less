@@ -29,13 +29,7 @@ body:not(.template-manage-portlets) {
             .navTreeTopNode a {
                 color: @color-portlet !important;
                 text-transform: uppercase;
-                &::after {
-                    content: " ";
-                    display: block;
-                    border-bottom: 1px white solid;
-                    width: 65px;
-                    margin-top: 8px;
-                }
+                .smallborder();
                 &:hover {
                     text-decoration: none;
                 }
