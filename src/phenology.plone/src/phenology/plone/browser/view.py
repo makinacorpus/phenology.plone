@@ -26,11 +26,16 @@ class PhenologyView(BrowserView):
     def getSubSections(self, folder_id):
         root = api.portal.get_navigation_root(self.context)
         catalog = api.portal.get_tool(name='portal_catalog')
+        navtree_properties = root.portal_properties.navtree_properties
+        blacklist = navtree_properties.getProperty('metaTypesNotToList', ())
+        all_types = catalog.uniqueValuesFor('portal_type')
+
         subsections = catalog(
             path={
                 'query' : '/'.join(root.getPhysicalPath() + (folder_id,)),
                 'depth': 1,
             },
             exclude_from_nav=False,
+            portal_type=[t for t in all_types if t not in blacklist],
         )
         return subsections
