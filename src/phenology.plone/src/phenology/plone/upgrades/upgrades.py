@@ -60,7 +60,7 @@ sur la végétation en montage.</p>""",
 <h2>Carte des observateurs</h2>
 <p>Lorem</p>
 </td>
-<td><img class="image-inline" src="resolveuid/1123a278e32f4d71a12423220b78db9a" /></td>
+<td><img class="image-inline" src="shared/carte/image" /></td>
 </tr>
 </tbody>
 </table>""",
