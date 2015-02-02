@@ -76,10 +76,11 @@ EMBED_TILES = [
         'id': 'sociallinks-tile',
         'content': """<p>Nous suivre:</p>
 <ul>
-<li><a href="#"><img src="picto-facebook.png"/></a></li>
-<li><a href="#"><img src="picto-facebook.png"/></a></li>
-<li><a href="#"><img src="picto-facebook.png"/></a></li>
-<li><a href="#"><img src="picto-facebook.png"/></a></li>
+<li><a href="#" target="_new"><img src="picto-facebook.png"/></a></li>
+<li><a href="#" target="_new"><img src="picto-flickr.png"/></a></li>
+<li><a href="https://twitter.com/creamontblanc" target="_new"><img src="picto-twitter.png"/></a></li>
+<li><a href="#" target="_new"><img src="picto-youtube.png"/></a></li>
+<li><a href="#" target="_new"><img src="picto-instagram.png"/></a></li>
 </ul>""",
     },
 ]
