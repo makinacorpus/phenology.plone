@@ -179,11 +179,11 @@ body#content.mceContentBody {
 }
 
 /* MIXINS */
-.smallborder() {
+.smallborder(@color) {
     &::after {
         content: " ";
         display: block;
-        border-bottom: 1px white solid;
+        border-bottom: 1px @color solid;
         width: 65px;
         margin-top: 8px;
     }

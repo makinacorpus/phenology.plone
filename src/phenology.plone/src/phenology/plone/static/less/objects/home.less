@@ -20,14 +20,40 @@
 
 #slideshow {
     background-color: @color-bg-slideshow;
-    .item img {
-        height: 240px;
-        width: auto;
-        max-width: none;
+    .item {
+        & > a:first-child {
+            display: block;
+            float: right;
+            height: 360px;
+            width: 66%;
+        }
+        h2 {
+            margin: 0;
+            .smallborder(@color-title);
+            padding: 16px;
+            a {
+                text-decoration: none;
+            }
+        }
+        img {
+            float: none;
+            width: 100%;
+            margin: 0;
+        }
+        p {
+            color: white;
+            padding-left: 16px;
+        }
     }
     .carousel-indicators {
         background-color: @color-bg-slideshow-indicators;
-        display: none; // TODO : make it work
+        display: none;
+    }
+    .carousel-control {
+        background-color: transparent;
+        &:hover {
+            background-color: @color-bg-slideshow-indicators;
+        }
     }
     .carousel-caption {
         background-color: rgba(0,0,0,0.2);
@@ -56,11 +82,6 @@
         .text-hide();
         h2 { margin: 0; }
     }
-    @media screen and (min-width: @screen-xs-min) {
-        .item img {
-            height: 360px;
-        }
-    }
     @media screen and (min-width: @screen-sm-min) {
         .carousel-indicators {
             text-align: right;
@@ -79,13 +100,10 @@
                 background-position: left bottom;
             }
         }
-        .item img {
-            margin-left: 30%;
-        }
         .carousel-control {
             &.left {
               margin-left: @carousel-control-font-size /2;
-              left: 30%;
+              left: 33%;
             }
             &.right {
               margin-right: @carousel-control-font-size /2;
@@ -132,7 +150,7 @@
         color: @color-portlet;
         text-transform: uppercase;
         font-size: 24px;
-        .smallborder();
+        .smallborder(white);
         margin: 0;
         padding: 10px 0 0 10px;
     }
