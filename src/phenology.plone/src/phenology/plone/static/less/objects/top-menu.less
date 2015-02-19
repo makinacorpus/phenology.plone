@@ -24,7 +24,15 @@
     background-color: @color-bg-langselect;
     width: 40%;
     li {
-        display: block;
+        display: none;
+        &.currentLanguage {
+            display: block;
+        }
+    }
+    &:hover {
+        li {
+            display: block;
+        }
     }
 }
 
