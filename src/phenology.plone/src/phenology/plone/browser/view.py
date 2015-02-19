@@ -39,3 +39,9 @@ class PhenologyView(BrowserView):
             portal_type=[t for t in all_types if t not in blacklist],
         )
         return [sub.getObject() for sub in subsections]
+
+    @memoize
+    def getDescription(self):
+        root = api.portal.get_navigation_root(self.context)
+        description = root.Description()
+        return description

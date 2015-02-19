@@ -20,6 +20,7 @@
 
   <!-- HEADER -->
   <prepend css:content="#portal-logo" css:theme="#portal-logo-wrapper"/>
+  <replace css:content-children="#portal-tagline" css:theme-children="#portal-tagline"/>
   <append  css:content="#portal-globalnav-bs" css:theme="#portal-globalnav-wrapper"/>
   <append  css:content="#portal-searchbox" css:theme="#portal-searchbox-wrapper" />
   <append  css:content="#portal-languageselector" css:theme="#language-links-wrapper" />

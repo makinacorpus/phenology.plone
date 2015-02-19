@@ -7,3 +7,5 @@
    i18n:attributes="title">
     <img src="logo.jpg" alt="" 
  tal:attributes="src string:${view/navigation_root_url}/logo.png;"/></a>
+ <p id="portal-tagline" tal:define="phenologyview python:context.unrestrictedTraverse('@@phenologyview');"
+    tal:content="phenologyview/getDescription">description</p>
