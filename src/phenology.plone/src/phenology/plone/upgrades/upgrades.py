@@ -45,7 +45,7 @@ COVER_LAYOUT = """[{
 RICHTEXT_TILES = [
     {
         'id': 'top-banner',
-        'content': """<p><a class="btn btn-halo btn-lg pull-right" 
+        'content': """<p><a class="btn btn-halo btn-lg pull-right"
 href="#" data-mce-href="#">Inscrivez-vous !</a>
 Phénoclim est un programme scientifique et pédagogique<br>
 qui invite le public à mesure l'impact du changement climatique<br>
@@ -87,7 +87,7 @@ EMBED_TILES = [
 COLLECTION_TILES = [
     {
         'id': 'slideshow',
-        'collection': 'news',
+        'collection': 'news-a-la-une',
         'slidemode': True,
         'config': {'description': {'order': u'4', 'visibility': u'on'}, 'title': {'htmltag': u'h2', 'order': u'2', 'visibility': u'on'}, 'css_class': u'tile-default', 'image': {'position': u'right', 'imgsize': u'large 768:768', 'visibility': u'on', 'order': u'0'}, 'footer': {'visibility': u'off', 'order': u'7', 'htmltag': u'h2'}, 'slidemode': {'order': u'9', 'visibility': u'on'}, 'header': {'htmltag': u'h2', 'order': u'1', 'visibility': u'on'}, 'offset': {'order': u'6', 'visibility': u'on', 'offset': u'0'}, 'date': {'order': u'3', 'visibility': u'on'}, 'number_to_show': {'order': u'5', 'visibility': u'on', 'size': u'5'}},
     }
@@ -155,3 +155,10 @@ def init_content(context):
     setupTool.move_default_language_content()
     for lang in ['fr', 'en', 'it']:
         create_cover(portal[lang])
+
+def v1002(context):
+    portal = api.portal.get()
+    tile = portal.fr[COVER_ID].restrictedTraverse(
+        '@@{0}/{1}'.format('collective.cover.collection', 'slideshow'))
+    obj = portal.fr.get('news-a-la-une')
+    tile.populate_with_object(obj)

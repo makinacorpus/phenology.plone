@@ -46,4 +46,12 @@
         description=""
         handler=".upgrades.init_content"
       />
+    <genericsetup:upgradeStep
+        profile="phenology.plone:default"
+        source="1001"
+        destination="1002"
+        title="Upgrade to 1002"
+        description=""
+        handler=".upgrades.v1002"
+      />
 </configure>
