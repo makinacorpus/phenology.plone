@@ -37,6 +37,7 @@ class PhenologyView(BrowserView):
             },
             exclude_from_nav=False,
             portal_type=[t for t in all_types if t not in blacklist],
+            sort_on='getObjPositionInParent', sort_order='ascending'
         )
         return [sub.getObject() for sub in subsections]
 
