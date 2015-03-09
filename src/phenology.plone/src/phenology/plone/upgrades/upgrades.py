@@ -158,7 +158,10 @@ def init_content(context):
 
 def v1002(context):
     portal = api.portal.get()
+    data = COLLECTION_TILES[0]
     tile = portal.fr[COVER_ID].restrictedTraverse(
-        '@@{0}/{1}'.format('collective.cover.collection', 'slideshow'))
-    obj = portal.fr.get('news-a-la-une')
+        '@@{0}/{1}'.format('collective.cover.collection', data['id']))
+    obj = portal.fr.get(data['collection'])
     tile.populate_with_object(obj)
+    tile.slidemode = data['slidemode']
+    tile.set_tile_configuration(data['config'])
