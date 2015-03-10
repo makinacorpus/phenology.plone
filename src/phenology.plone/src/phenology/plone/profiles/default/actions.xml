@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <object name="document_actions" meta_type="CMF Action Category">
+  <property name="title"></property>
+  <object name="rss" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title" i18n:translate="">RSS feed</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">object/@@syndication-util/rss_url</property>
+   <property name="link_target"></property>
+   <property name="icon_expr">string:$portal_url/rss.png</property>
+   <property
+      name="available_expr">object/@@syndication-util/context_enabled</property>
+   <property name="permissions">
+    <element value="View"/>
+   </property>
+   <property name="visible">False</property>
+  </object>
+  <object name="print" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title" i18n:translate="">Print this</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">string:javascript:this.print();</property>
+   <property name="link_target"></property>
+   <property name="icon_expr">string:$portal_url/print_icon.png</property>
+   <property name="available_expr"></property>
+   <property name="permissions">
+    <element value="View"/>
+   </property>
+   <property name="visible">False</property>
+  </object>
+  <object name="full_screen" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title" i18n:translate="">Toggle full screen mode</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:javascript:toggleFullScreenMode();</property>
+   <property name="link_target"></property>
+   <property
+      name="icon_expr">string:$portal_url/fullscreenexpand_icon.png</property>
+   <property name="available_expr">python:member is not None</property>
+   <property name="permissions">
+    <element value="View"/>
+   </property>
+   <property name="visible">False</property>
+  </object>
+  <object name="extedit" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title"
+      i18n:translate="">Edit with external application</property>
+   <property name="description" i18n:translate=""></property>
+   <property name="url_expr">string:$object_url/external_edit</property>
+   <property name="link_target"></property>
+   <property name="icon_expr">string:$portal_url/extedit_icon.png</property>
+   <property name="available_expr">object/externalEditorEnabled</property>
+   <property name="permissions">
+    <element value="Modify portal content"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+  <object name="twitter" meta_type="CMF Action">
+   <property name="title">Twitter</property>
+   <property name="description"></property>
+   <property
+      name="url_expr">string:http://twitter.com/intent/tweet?text=${object/Title}&amp;url=$object_url</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+  <object name="facebook" meta_type="CMF Action">
+   <property name="title">Facebook</property>
+   <property name="description"></property>
+   <property
+      name="url_expr">string:https://www.facebook.com/sharer.php?u=$object_url&amp;t=${object/Title}</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+  <object name="share" meta_type="CMF Action">
+   <property name="title">Share</property>
+   <property name="description"></property>
+   <property name="url_expr">string:$object_url/sendto_form</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+ </object>
+</object>
