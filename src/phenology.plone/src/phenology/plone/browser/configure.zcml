@@ -11,21 +11,12 @@
     />
   <interface  name="phenology.plone" interface="phenology.plone.interfaces.ILayer" />
 
-  <!-- Viewlets registration -->
-
-  <!-- Zope 3 browser views -->
-  <!--
-  <include package="plone.app.contentmenu"/>
-    <browser:page
-        layer="phenology.plone.interfaces.ILayer"
-        for="phenology.plone.interface.mycontent"
-        menu="plone_displayviews"
-        name="MyView"
-        class=".view.MyView"
-        allowed_interface=".view.IMyView"
-        permission="zope2.View"
+  <browser:page
+      name="news_summary_view"
+      permission="zope2.View"
+      for="plone.app.collection.interfaces.ICollection"
+      template="news_summary_view.pt"
       />
-  -->
 
   <!-- Zope 3 browser resources -->
 
