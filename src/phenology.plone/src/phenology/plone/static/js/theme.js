@@ -1,7 +1,11 @@
 var phenology = {};
 
 phenology.initialize_phenology = function() {
-    //~ phenology.initialize_sections();
+    $('.dropdown a[data-toggle]').click(function() {
+        var location = $(this).attr('href');
+        window.location.href = location;
+        return false;
+    });
 }
 
 phenology.equalHeight = function(group) {
