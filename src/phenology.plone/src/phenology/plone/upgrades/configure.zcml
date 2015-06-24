@@ -54,4 +54,12 @@
         description=""
         handler=".upgrades.v1002"
       />
+    <genericsetup:upgradeStep
+        profile="phenology.plone:default"
+        source="*"
+        destination="*"
+        title="phenology.plone - init ca and it"
+        description=""
+        handler=".upgrades.init_ca_it"
+      />
 </configure>

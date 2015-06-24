@@ -165,3 +165,8 @@ def v1002(context):
     tile.populate_with_object(obj)
     tile.slidemode = data['slidemode']
     tile.set_tile_configuration(data['config'])
+
+def init_ca_it(context):
+    portal = api.portal.get()
+    for lang in ['ca', 'it']:
+        create_cover(portal[lang])
