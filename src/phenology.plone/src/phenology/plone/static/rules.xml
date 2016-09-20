@@ -36,4 +36,7 @@
   <!-- FOOTER -->
   <append css:content="#portal-siteactions"    css:theme="#portal-siteactions-wrapper" />
   <append css:content="#portal-colophon"    css:theme="#colophon" />
+
+  <!-- Google Analytics JavaScript -->
+  <after theme-children="/html/body" content="//*[@id='portal-footer-wrapper']/div/script" />
 </rules>
